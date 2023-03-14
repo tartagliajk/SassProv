@@ -1,0 +1,59 @@
+$primaryFont: 36px;
+$primaryColour: yellow;
+$bacColour: blueviolet;
+$headingBacColour: rgb(0, 128, 128);
+$textColour: null;
+
+@mixin buttonRadius{
+    border-radius: 10px;
+}
+
+@mixin sharingColor{
+    background-color: $headingBacColour;
+    color: $textColour;
+}
+
+@function dubbleFont($primaryFont){
+    $primaryFont: $primaryFont * 2;
+    @return $primaryFont;    
+}
+
+@function colourCompliment($bacColour, $textColour){
+    $textColour: complement($bacColour);
+    @return $textColour;
+}
+
+@function lightnessText($bacColour, $textColour){
+    @if lightness($bacColour) > 50{
+        $textColour: black;
+        @return $textColour;
+    }@else{
+        $textColour: white;
+        @return $textColour;
+    }
+}
+
+body{
+    background-color: $bacColour;
+    
+    button{
+        @include buttonRadius();
+    }
+
+    h1{
+        @include sharingColor();
+    }
+
+    p{
+        color: $primaryColour;
+    }
+}
+
+.dubbleFont{
+    font-size: dubbleFont($primaryFont);
+    color: colourCompliment($bacColour, $textColour);
+}
+
+.lighnessText{
+    color: lightnessText($bacColour, $textColour)
+}

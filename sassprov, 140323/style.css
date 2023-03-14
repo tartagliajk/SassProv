@@ -1,0 +1,21 @@
+body {
+  background-color: blueviolet;
+}
+body button {
+  border-radius: 10px;
+}
+body h1 {
+  background-color: rgb(0, 128, 128);
+}
+body p {
+  color: yellow;
+}
+
+.dubbleFont {
+  font-size: 72px;
+  color: #83e22b;
+}
+
+.lighnessText {
+  color: black;
+}/*# sourceMappingURL=style.css.map */
